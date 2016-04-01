@@ -1,0 +1,111 @@
+/*
+ * object/project/_postcss.scss
+ */
+
+/* Custom Properties */
+ 
+.postcss-test1 {
+	color: #88e18e;
+}
+
+.postcss-test2 {
+	color: #333333;
+}
+
+/* Custom Selector */
+
+.content h1 + p,
+.content h2 + p,
+.content h3 + p,
+.content h4 + p,
+.content h5 + p,
+.content h6 + p {
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+/* Color Variables */
+.list__item {
+	background-color: rgba(255, 0, 0, 0.9);
+}
+
+/* Selector Matches */
+.list__item:last-child, .list__item.is-lastitem {
+	border-bottom: 0 none;
+}
+
+p:first-child, p.text {
+	color: #333333;
+}
+
+/* Selector Not */
+p:not(:first-child):not(.special) {
+	color: #999999;
+}
+
+.c-list__item:not(:last-child):not(.is-active) {
+	background-color: #dfdfdf;
+}
+
+/* Filter */
+.blur {
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
+}
+.contrast {
+	-webkit-filter: contrast(200%);
+	        filter: contrast(200%);
+}
+.drop-shadow {
+	-webkit-filter: drop-shadow(16px 16px 20px blue);
+	        filter: drop-shadow(16px 16px 20px blue);
+}
+
+/* Custom Media */
+
+@media (max-width: 640px) {
+	.c-lists .c-list__item {
+		width: 100px;
+	}
+}
+@media (max-width: 880px) {
+	.c-lists .c-list__item {
+		width: 200px;
+	}
+}
+@media (max-width: 1080px) {
+	.c-lists .c-list__item {
+		width: 300px;
+	}
+}
+
+/* Custom Media MinMax */
+/* Normal */
+@media screen and (min-width: 500px) and (max-width: 1200px) {
+	.p-lists__item {
+		display: block;
+	}
+}
+/* Normal + Custom Media */
+@media screen and (min-width: 640px) and (max-width: 880px) {
+	.p-lists-a__item {
+		display: block;
+	}
+}
+@media screen and (max-width: 640px) and (max-width: 1080px) {
+	.p-lists-b__item {
+		display: block;
+	}
+}
+/* Shorthand */
+@media screen and (min-width: 640px) and (max-width: 1080px) {
+	.media-a {
+		display: block;
+	}
+}
+/* Shorthand + Variables */
+@media screen and (min-width: 640px) and (max-width: 1200px) {
+	.media-b {
+		display: block;
+	}
+}

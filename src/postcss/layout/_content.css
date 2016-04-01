@@ -1,0 +1,21 @@
+/*
+ * object/layout/_content.scss
+ */
+#content {
+	display: block;
+	padding: 55px 10px 50px;
+}
+
+.content {
+	appearance: none;
+	@mixin bg-img sample;
+	box-sizing: border-box;
+	.head1 {
+		color: #333333;
+		@mixin font20;
+	}
+	p {
+		color: #999999;
+		@mixin font12;
+	}
+}

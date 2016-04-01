@@ -1,0 +1,27 @@
+/*
+ * object/layout/_content.scss
+ */
+#content {
+	display: block;
+	padding: 55px 10px 50px;
+}
+
+.content {
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	        appearance: none;
+	background-image: url(../img/sample.png);
+	box-sizing: border-box;
+}
+
+.content .head1 {
+	color: #333333;
+	font-size: 20px;
+	font-size: 2rem;
+}
+
+.content p {
+	color: #999999;
+	font-size: 12px;
+	font-size: 1.2rem;
+}

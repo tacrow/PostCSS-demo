@@ -1,0 +1,123 @@
+/*
+ * object/project/_postcss.scss
+ */
+
+/* Custom Properties */
+:root {
+	--brand-color: #88e18e;
+	--base-color: #333333;
+}
+ 
+.postcss-test1 {
+	color: var(--brand-color);
+}
+
+.postcss-test2 {
+	color: var(--base-color);
+}
+
+/* Custom Selector */
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
+
+.content :--heading + p {
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+/* Color Variables */
+.list__item {
+	background-color: color(red a(90%));
+}
+
+/* Selector Matches */
+.list__item:matches(:last-child, .is-lastitem) {
+	border-bottom: 0 none;
+}
+
+p:matches(:first-child, .text) {
+	color: #333333;
+}
+
+/* Selector Not */
+p:not(:first-child, .special) {
+	color: #999999;
+}
+
+.c-list__item:not(:last-child, .is-active) {
+	background-color: #dfdfdf;
+}
+
+/* Filter */
+.blur {
+    filter: blur(5px);
+}
+.contrast {
+	filter: contrast(200%);
+}
+.drop-shadow {
+	filter: drop-shadow(16px 16px 20px blue);
+}
+
+/* Custom Media */
+@custom-media --mobile-viewport (max-width: 640px);
+@custom-media --middle-viewport (max-width: 880px);
+@custom-media --learge-viewport (max-width: 1080px);
+
+@media (--mobile-viewport) {
+	.c-lists {
+		.c-list__item {
+			width: 100px;
+		}
+	}
+}
+@media (--middle-viewport) {
+	.c-lists {
+		.c-list__item {
+			width: 200px;
+		}
+	}
+}
+@media (--learge-viewport) {
+	.c-lists {
+		.c-list__item {
+			width: 300px;
+		}
+	}
+}
+
+/* Custom Media MinMax */
+/* Normal */
+@media screen and (width >= 500px) and (width <= 1200px) {
+	.p-lists__item {
+		display: block;
+	}
+}
+/* Normal + Custom Media */
+@custom-media --media-a-viewport (width >= 640px);
+@custom-media --media-b-viewport (width <= 880px);
+@media screen and (--media-a-viewport) and (--media-b-viewport) {
+	.p-lists-a__item {
+		display: block;
+	}
+}
+@custom-media --media-c-viewport (max-width: 640px);
+@custom-media --media-d-viewport (max-width: 1080px);
+@media screen and (--media-c-viewport) and (--media-d-viewport) {
+	.p-lists-b__item {
+		display: block;
+	}
+}
+/* Shorthand */
+@media screen and (640px <= width <= 1080px) {
+	.media-a {
+		display: block;
+	}
+}
+/* Shorthand + Variables */
+$modile_width: 640px;
+$learge_width: 1200px;
+@media screen and ($modile_width <= width <= $learge_width) {
+	.media-b {
+		display: block;
+	}
+}
