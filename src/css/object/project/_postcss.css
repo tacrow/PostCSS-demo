@@ -3,7 +3,7 @@
  */
 
 /* Custom Properties */
- 
+
 .postcss-test1 {
 	color: #88e18e;
 }
@@ -50,14 +50,17 @@ p:not(:first-child):not(.special) {
 /* Filter */
 .blur {
     -webkit-filter: blur(5px);
+            filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="5" /></filter></svg>#filter');
             filter: blur(5px);
 }
 .contrast {
 	-webkit-filter: contrast(200%);
+	        filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="2" intercept="-0.5" /><feFuncG type="linear" slope="2" intercept="-0.5" /><feFuncB type="linear" slope="2" intercept="-0.5" /></feComponentTransfer></filter></svg>#filter');
 	        filter: contrast(200%);
 }
 .drop-shadow {
 	-webkit-filter: drop-shadow(16px 16px 20px blue);
+	        filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur in="SourceAlpha" stdDeviation="20" /><feOffset dx="17" dy="17" result="offsetblur" /><feFlood flood-color="rgba(0,0,255,1)" /><feComposite in2="offsetblur" operator="in" /><feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge></filter></svg>#filter');
 	        filter: drop-shadow(16px 16px 20px blue);
 }
 

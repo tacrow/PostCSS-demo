@@ -7,7 +7,7 @@
 	--brand-color: #88e18e;
 	--base-color: #333333;
 }
- 
+
 .postcss-test1 {
 	color: var(--brand-color);
 }
