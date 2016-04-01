@@ -1,7 +1,6 @@
 /*
  * postcss-demo gulpfile.js
  */
-
 var src = {
 	postcss: 'src/postcss/**/*.css',
 	css:     'src/css/',
