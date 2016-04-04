@@ -31,7 +31,7 @@ var plugins = [
 ];
 
 var cssnano = [
-	require('cssnano')
+	require('cssnano')({ mergeRules: false })
 ];
 
 gulp.task('postcss', function() {
